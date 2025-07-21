@@ -1,5 +1,4 @@
-const API_URL = 'http://localhost:3000';
-
+const API_URL = 'https://smart-goal-planner-json-server.onrender.com';
 export const fetchGoals = async () => {
   try {
     const response = await fetch(`${API_URL}/goals`);
@@ -55,7 +54,7 @@ export const deleteGoal = async (goalId) => {
     if (!response.ok) {
       throw new Error('Failed to delete goal');
     }
-    return response.json();
+    return true;
   } catch (error) {
     console.error('Error deleting goal:', error);
     throw error;
